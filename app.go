@@ -3,10 +3,17 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"text/template"
 )
 
 // Handler
 func Index(rw http.ResponseWriter, r *http.Request) {
+	// Con _ Para no capturar el error
+	template, _ := template.ParseFiles("templates/index.html")
+
+	// Mostramos mensaje con respuesta y no enviamos ningun dato
+	template.Execute(rw, nil)
+
 	fmt.Fprintln(rw, "Hola Mundo")
 
 }
