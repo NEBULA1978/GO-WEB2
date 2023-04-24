@@ -9,7 +9,7 @@ import (
 // Handler
 func Index(rw http.ResponseWriter, r *http.Request) {
 	// Con _ Para no capturar el error
-	template, _ := template.ParseFiles("templates/index.html")
+	template, _ := template.ParseFiles("template/index.html")
 
 	// Mostramos mensaje con respuesta y no enviamos ningun dato
 	template.Execute(rw, nil)
