@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"net/http"
+)
 
 func main() {
-	fmt.Println("Hola mundo")
+	http.ListenAndServe("localhost:3000", nil)
 }
