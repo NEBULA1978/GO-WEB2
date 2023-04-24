@@ -9,6 +9,74 @@
             href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
             integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
             crossorigin="anonymous">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+            rel="stylesheet">
+        <style type="text/css">
+	*{
+		font-family: 'Montserrat', sans-serif;
+	}
+	input{		
+		padding:3px 6px;
+		outline:none;
+		margin-bottom:10px;
+		border:1px solid orangered;
+	}
+	div{
+		color:orangered;
+	}
+	button{
+		padding:3px 10px;
+	}
+	main{
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+	}
+	#nombres {
+		float: right;
+		margin-left: 20px;
+		border: 1px solid orangered;
+		border-radius: 6px;
+		min-width: 150px;
+	}
+</style>
+        <script type="text/javascript">
+	window.onload=inicio;
+	
+	function inicio(){
+		let botones=document.getElementsByClassName("boton0");
+		for(let i =0;i<botones.length;i++){
+			if(i==0)
+				botones[i].input="nombre";
+			else if(i==1)
+				botones[i].input="nombre4";
+			else if(i==2)
+				botones[i].input="nombre5";
+			botones[i].onclick=lista;
+		}	
+		// document.querySelector("button").onclick=lista;
+		document.querySelector("#nombre").onkeydown=teclado;
+	}
+	function teclado(parametro){
+		let codigoDeTecla=parametro.keyCode;
+		if (codigoDeTecla==13){
+			lista();
+		}
+	}
+	function lista(){
+		let input=document.getElementById(this.input);
+		let nombre = input.value.trim();
+		let nombre_mejorado=(nombre.substr(0,1)).toUpperCase()+(nombre.substr(1)).toLowerCase();
+		if (nombre.length>0){
+			document.querySelector("#nombres").innerHTML += `<div>${nombre_mejorado}</div>`;	
+		}
+		input.focus();
+		input.value="";
+		if (this.ancho==45)
+			alert("Hola");
+	}
+</script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -63,6 +131,20 @@
             </div>
         </div>
 
+        <main>
+            <div id="caja">
+                <input id="nombre" placeholder="Escribe tu nombre"
+                    spellcheck="false" autofocus>
+                <button class="boton0" ancho="45">Aceptar</button>
+                <input id="nombre4" placeholder="Escribe tu nombre"
+                    spellcheck="false" autofocus>
+                <button class="boton0">Aceptar</button>
+                <input id="nombre5" placeholder="Escribe tu nombre"
+                    spellcheck="false" autofocus>
+                <button class="boton0">Aceptar</button>
+            </div>
+            <div id="nombres"></div>
+        </main>
 
     </body>
 </html>
