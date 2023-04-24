@@ -5,11 +5,13 @@ import (
 	"net/http"
 )
 
+// Handler
 func Index(rw http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(rw, "Hola Mundo")
 
 }
 
+// Ruta
 func main() {
 	http.HandleFunc("/", Index)
 
