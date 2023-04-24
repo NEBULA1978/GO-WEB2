@@ -1,0 +1,399 @@
+Hola qué tal Bienvenidos a este vídeo
+tutorial en este vídeo tutorial vamos a
+crear nuestra primera página web
+utilizando el lenguaje de programación
+Go Este es un vídeo tutorial práctico
+Así que vamos a estar creando un pequeño
+página web utilizando Go lo primero que
+vamos a hacer es crear nuestro proyecto
+Así que vamos a abrir una terminal y en
+este caso me voy a dirigir a mi espacio
+de trabajo que normalmente yo lo tengo
+en el disco c Así que voy a ir a disco c
+y dentro de disco c tengo mi carpeta que
+se llama
+Word space estando dentro de aquí voy a
+crear mi proyecto Así que coloco mcadir
+y voy a colocar mi web así se va a
+llamar mi proyecto simplemente ingreso a
+mi web y a estando aquí desde este punto
+voy a abrir con visual Así que voy a
+colocar code punto Entonces desde este
+punto se va a abrir mi visual Studio
+code Aquí voy a aceptar y ya está ya
+está abierto mi proyecto que se llama mi
+web
+lo que yo voy a hacer primero es crear
+un archivo de go para crear una página
+web Congo lo primero que tenemos que
+hacer es crear nuestro servidor entonces
+para eso lo vamos a hacer en un archivo
+de gogó Entonces vamos a colocar a Pepe
+punto Go que esto es nuestra aplicación
+y de hecho también nosotros podemos
+indicarle que este archivo va a
+pertenecer al paquete principal y vamos
+a crear nuestra función principal que se
+llama
+Main Ya teniendo todo esto nosotros
+podemos utilizar el paquete fmt e
+imprimir un hola mundo en la pantalla
+utilizando la función primblay Así que
+colocamos aquí o la mundo Ya teniendo
+esto nosotros podemos regresar a la
+terminal y aquí nosotros podemos
+ejecutar con el comando Run el archivo A
+punto Go y lo que nos va a devolver en
+este caso es Hola mundo hasta aquí todo
+va bien pero para crear una página web
+necesitamos crear un servidor y para
+esto nosotros vamos a utilizar el
+paquete htt
+entonces lo que vamos a hacer
+simplemente sería importar aquí el
+paquete http pero vamos a empezar a
+utilizar directamente para que se
+importe automáticamente Entonces lo
+primero que vamos a hacer es que dónde
+va a correr el servidor Así que aquí voy
+a colocar por ejemplo http de esta forma
+y como verás aquí automáticamente se
+importe el paquete que se llama net
+barro diagonal http entonces en esta
+parte nosotros vamos a utilizar
+lead and server Para indicarle dónde
+vamos a escuchar el servidor o dónde va
+a correr el servidor entonces aquí le
+vamos a indicar dónde va a correr el
+servidor como estamos trabajando de
+forma local vamos a decir que corra en
+el local Así que colocamos local hots
+dos puntos en el puerto 3000 y Listo ya
+tenemos esta parte en este caso nos está
+apareciendo como un error que no debería
+aparecer Es que aquí nosotros tenemos
+que enviarle el servidor y un por ahora
+simplemente vamos a enviar un valor que
+va a ser mil de esta forma ahora que
+tenemos esto nosotros ya podemos correr
+la aplicación y prácticamente en esta
+parte ya nos debería retornar no importa
+una página de error vamos a probar
+regresamos aquí y nuevamente colocamos
+Go Run y ejecutamos a punto en este caso
+no vamos a ver nada pero si vamos a un
+navegador y aquí colocamos por ejemplo
+local hots en el puerto 3000 si nosotros
+ejecutamos aquí ya nos devuelve una
+página de error en este caso el error de
+404 la página no funciona para que
+nosotros retornemos Algo vamos a crear
+una ruta y también un handler que es una
+función que va Lo que va a hacer es
+devolver con un mensaje a la petición
+del cliente entonces aquí arriba Vamos a
+seguir utilizando el paquete http
+colocamos http y aquí colocamos handler
+Funk en esta parte como primer pa
+nosotros lo que le vamos a colocar va a
+ser la ruta en este caso por ejemplo
+aquí simplemente voy a colocar barra
+diagonal y como segundo nosotros vamos a
+retornar con un handle que sería una
+función yo coloco Funk y por ejemplo con
+la ayuda de visual Studio code genero
+esta función Aquí vamos a devolver una
+función anónima en este caso esta
+función no tiene nombre pero esta es la
+función que vamos a devolver a la
+petición de esta ruta entonces aquí
+nosotros podemos utilizar
+f-pring light del paquete fmt para
+retornar un mensaje entonces por ejemplo
+vamos a colocar fmt punto F Prime
+colocamos aquí y aquí lo que vamos a
+hacer Es que aquí se ha generado dos
+parámetros que está recibiendo este esta
+función lo que está haciendo es el
+response right para responder al cliente
+y esto es el request para obtener la
+petición del cliente Entonces como
+nosotros queremos responder en este caso
+vamos a utilizar el response right por
+ejemplo aquí como valor podríamos
+colocar rw para decir response entonces
+aquí colocamos primero que vamos a
+responder al cliente Entonces vamos a
+colocar response y con qué mensaje aquí
+vamos a colocar con Hola mundo ahora que
+tenemos esto nosotros vamos a volver a
+ejecutar nuestra aplicación vamos a
+detener el servidor con control + c y
+vamos a volver a ejecutar ahora
+regresamos a nuestro navegador y se
+actualizamos ahora ya tenemos Hola mundo
+como verás nuestro servidor simplemente
+se ejecuta aquí no se detiene y no vemos
+nada lo que podemos hacer es dejar algún
+mensaje vamos a regresar a nuestra
+aplicación donde estamos creando el
+servidor aquí lo que estamos haciendo es
+creando o crea
+el servidor vamos a agregarle más
+mensajes al inicio por ejemplo vamos a
+utilizar el paquete fmt que es para
+mostrar datos en la consola y lo vamos a
+colocar con la función print diciendo el
+servidor está corriendo en el puerto
+3000 y también nosotros podemos
+colocarle una ruta para que pueda abrir
+directamente por ejemplo colocando fmt
+por un printline colocamos un Run server
+y aquí le colocamos esta ruta que es
+donde estamos ejecutando nuestra
+aplicación Entonces cuando nosotros
+volvamos a ejecutar nuestra aplicación
+vamos a ver ese mensaje y nosotros
+podemos presionar control más clic aquí
+y se va a abrir en un navegador Como por
+ejemplo en esta y lo que nos va a
+devolver es Hola mundo hasta aquí ya
+está funcionando correctamente nuestro
+servidor y está devolviendo simplemente
+un mensaje plano lo que nosotros podemos
+hacer es devolver un archivo html
+Entonces vamos a crear aquí una carpeta
+le voy a llamar template De esta forma y
+dentro de Aquí vamos a crear un archivo
+html que va a ser Index punto html ahora
+esta función es un handler y este
+handler que estamos retornando en esta
+ruta nosotros podemos separar O sea que
+aquí podemos crear una función por
+ejemplo vamos a crear Funk le vamos a
+llamar Index y aquí tal cual que estamos
+haciendo esto nosotros vamos a realizar
+podemos copiar y pegarlo aquí y ahora
+nosotros podemos indicar lo que va a
+retornar que sería simplemente este
+mensaje ahora nosotros podemos Borrar
+todo esta función que sería todo esto y
+aquí simplemente llamamos esta función
+que se llama Index de esta forma ahora
+si nosotros guardamos y volvemos a
+ejecutar nuestra aplicación Y regresamos
+a nuestro navegador y actualizamos como
+habrás Tenemos el mismo resultado Solo
+que el handler lo estamos separa con la
+ruta ahora que ya tenemos esto separado
+lo que vamos a hacer en este caso ya no
+es devolver Hola mundo sino que lo que
+queremos hacer es renderizar un template
+entonces aquí arriba Vamos a indicar qué
+template es lo que queremos renderizar
+vamos a crear una variable que va a ser
+template dos puntos igual y como verás
+aquí cuando yo utilice la palabra
+template aquí automáticamente se ha
+importado un paquete que se llama Tex
+template Esto es para devolver archivos
+html o para trabajar con archivos html
+ahora lo que vamos a hacer en este caso
+es template y vamos a llamar en este
+caso de este paquete que se llama
+template punto
+parcefate y en este caso lo que vamos a
+hacer es colocar la ruta del archivo que
+está en la carpeta template que hemos
+creado y el archivo se llama Index punto
+html de esta forma pero si nos fijamos
+aquí
+vuelve dos valores en este caso nos va a
+devolver el archivo template
+prácticamente va a cargar el archivo
+template como también un error entonces
+en esta parte tenemos que capturar esos
+dos por ejemplo si no queremos capturar
+el error simplemente podríamos colocar
+simplemente de esta forma y ahora
+nosotros podemos renderizar ese template
+nosotros para renderizar ese template Y
+en vez de mostrar este mensaje lo que
+vamos a hacer es lo siguiente vamos a
+utilizar template punto execute y aquí
+lo que tenemos que hacer es enviar
+la respuesta al cliente que en este caso
+sería response Y también si queremos
+enviar algunos datos por ahora
+simplemente vamos a colocar mil que no
+queremos enviar ningún dato ahora si
+nosotros actualizamos nuestra página no
+va a devolver nada porque en el archivo
+html no hay nada Entonces vamos a
+generar una estructura base de html
+colocamos de esta forma vamos a colocar
+que esta página es
+en español y aquí por ejemplo vamos a
+colocar
+mi web y aquí por ejemplo en un h1 vamos
+a colocar Hola mundo de go por ejemplo y
+luego de eso vamos a detener
+nuestro servidor y vamos a volver a
+ejecutar ahora vamos a regresar al
+navegador y vamos a actualizar y ahora
+como verás ya no nos devuelve un texto
+simple sino que en este caso nos está
+devolviendo un hola mundo que es un
+archivo html hasta aquí nosotros ya
+hemos renderizado nuestro archivo html
+Congo pero lo que podemos hacer es
+manejar los errores como también enviar
+datos para enviar datos nosotros vamos a
+crear una estructura por aquí arriba
+Entonces vamos a colocar tape le vamos a
+llamar usuario y este va a ser una
+estructura y ahora esta estructura va a
+tener nombre que va a ser de tipo String
+va a tener un skills que va a ser de
+tipo String también y también va a tener
+una edad que en este caso va a ser de
+tipo entero de hecho en este caso podría
+colocar users de esta forma y Listo ya
+tenemos nuestra estructura ahora vamos a
+crear una estructura por ejemplo un
+usuario vamos a crear un user o user 1
+simplemente voy a crear un user voy a
+colocar aquí dos puntos igual y voy a
+llamar mi estructura que se llama users
+y ahora Aquí voy a crear mi estructura
+de nombre le voy a colocar por ejemplo
+Alex roel o simplemente podría colocar
+Alex Luego de eso voy a colocar el
+skills por ejemplo le voy a decir que es
+un desarrollador web y luego de eso su
+edad ahora lo que vamos a hacer es
+manejar lo que devuelve esta función que
+es un error como también le vamos a
+enviar un dato entonces aquí vamos a
+crear una variable que va a ser error
+y luego de crear el usuario vamos a
+decir o vamos a crear una condición en
+el cual vamos a decir si error es
+distinto a nil que prácticamente existe
+error vamos a mandar un panic con el
+error y si no hay ningún error en ese
+caso pues lo que vamos a hacer es
+renderizar el template y también en este
+caso le vamos a enviar una estructura
+que se llama user
+de esta forma ahora lo que estamos
+haciendo es enviar una estructura a
+nuestro template y en nuestro template
+nosotros podemos
+recuperar estos datos Y mostrarlo para
+que nuestra página sea un poco más
+dinámica Así que vamos a regresar aquí y
+debajo de aquí por ejemplo en una p
+vamos a intentar recuperar ese dato por
+ejemplo en este caso le vamos a mostrar
+o vamos a colocar de la siguiente forma
+colocamos aquí Hola soy Y en este caso
+vamos a mostrar el dato que vamos a
+estar recibiendo de la estructura va a
+ser name y luego de eso le vamos a
+colocar también el skills Así que
+utilizando estas llaves nosotros vamos a
+recuperar los datos que estamos
+recibiendo por ejemplo en este caso
+sería skills
+y también le vamos a decir y tengo y le
+vamos a colocar aquí edad de esta forma
+ahora lo que vamos a hacer es
+parar el servidor ejecutar nuevamente
+nuestra aplicación y vamos a actualizar
+nuestra página y como verás en este caso
+Hola mundo de Go y aquí nos dice Hola
+Soy Alex roel desarrollador web y tengo
+27 años por ejemplo Aquí voy a colocar
+tengo 27 años coma y también Podemos
+agregar más mensajes por ejemplo
+Bienvenido a mi página de esta forma si
+nosotros detenemos el servidor y
+actualizamos aquí como verás ya tenemos
+una página web hecho con Word nosotros
+podemos agregarle por ejemplo algunos
+estilos como de bus trap simplemente
+copiando el dns vamos a ir en este caso
+aquí
+y en el Buscador de Google vamos a
+colocar bootstrap ingresamos a la página
+de bus trap en este caso la versión es
+5.2 vamos a regresar a una versión
+anterior que sería 4.6 ingresamos aquí y
+lo que vamos a hacer es copiar este dns
+de css entonces copiamos aquí y luego de
+eso regresamos a nuestro archivo html lo
+pegamos vamos a darle formato a nuestro
+documento y luego de eso también nos
+vamos a ir a la parte de componer y en
+la parte de componer nos vamos a ir a la
+parte de Jumbo tron y en esta parte
+nosotros podemos utilizar uno de estos
+estilos por ejemplo voy a utilizar el
+segundo que sería Este Entonces vamos a
+copiar este código y lo vamos a pegar en
+nuestro archivo html por ejemplo para
+aquí arriba Vamos a darle formato a
+nuestro documento y ahora en la parte de
+h1 vamos a colocarle un mensaje por
+ejemplo por ejemplo aquí le vamos a
+colocar mi primer página web con Go y
+luego de eso vamos a copiar este mensaje
+tal cual y lo vamos a pegar aquí en la p
+de esta forma y Prácticamente todo esto
+nosotros podríamos borrar y ahora si
+nosotros detenemos nuestra nuestro
+servidor volvemos a ejecutar y ahora
+actualizamos nuestra página como verás
+en este caso ya tenemos estilos en
+nuestra página web por ejemplo mi primer
+página web Congo Hola Soy Alex cruel
+desarrollador web y tengo 27 años
+Bienvenido a mi página y aquí ya estamos
+aplicando los estilos de Boost Entonces
+si queremos agregarle más elementos a
+nuestro archivo podemos copiarnos
+algunos códigos de bus trap por ejemplo
+si queremos agregar algún adverb y aquí
+nosotros podemos bajar hasta aquí y
+podemos copiar este código para obtener
+este en Advance
+y por ejemplo aquí encima nosotros lo
+podemos pegar le damos formato a nuestro
+documento
+guardamos de hecho en este caso tenemos
+el servidor volvemos a ejecutar Y en
+este caso si actualizamos vamos a tener
+ya de esta forma nuestra primera página
+web de aquí nosotros podemos hacer
+muchas cosas Podemos agregar nuestros
+propios archivos estáticos o nuestros
+propios css también Podemos agregar
+imágenes podemos hacer que este menú de
+navegación sea más Dinámico entre otras
+cosas por ahora hemos creado nuestra
+primera página web sencilla utilizando
+el lenguaje de programación Go lo que
+hemos hecho primero es crear un servidor
+donde ejecutar nuestra aplicación Luego
+de eso creamos una ruta y devolvemos un
+handler que sería una función de go
+donde está renderizando el archivo html
+y también le estamos enviando una
+estructura de datos
+si te ha gustado este vídeo tutorial No
+olvides de poner me gusta suscribirte al
+Canal y activar la campanita de
+notificación y conmigo nos vemos en un
+próximo vídeo
+[Música]
