@@ -5,10 +5,13 @@ import (
 	"net/http"
 )
 
+func Index(rw http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(rw, "Hola Mundo")
+
+}
+
 func main() {
-	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
-		fmt.Fprintln(rw, "Hola Mundo")
-	})
+	http.HandleFunc("/", Index)
 
 	// Crea el servidor
 	fmt.Println("El servidor esta corriendo enel puerto 3000")
