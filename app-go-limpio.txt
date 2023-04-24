@@ -1,0 +1,42 @@
+package main
+
+import (
+	"fmt"
+	"net/http"
+	"text/template"
+)
+
+// Estructura datos
+type Users struct {
+	Name   string
+	Skills string
+	Age    int
+}
+
+// Handler
+func Index(rw http.ResponseWriter, r *http.Request) {
+	// Con _ Para no capturar el error
+	template, err := template.ParseFiles("template/index.html")
+
+	user := Users{Name: "Ramon Pascual", Skills: "desarrolando webs", Age: 27}
+
+	if err != nil {
+		panic(err)
+	} else {
+		// Mostramos mensaje con respuesta
+		template.Execute(rw, user)
+	}
+
+	fmt.Fprintln(rw, "Hola Mundo")
+
+}
+
+// Ruta
+func main() {
+	http.HandleFunc("/", Index)
+
+	// Crea el servidor
+	fmt.Println("El servidor esta corriendo en el puerto 3000")
+	fmt.Println("Run server: http://localhost:3000")
+	http.ListenAndServe("localhost:3000", nil)
+}
