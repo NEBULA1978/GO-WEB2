@@ -14,7 +14,7 @@ type Users struct {
 }
 
 // Handler para la ruta principal
-func Index(rw http.ResponseWriter, r *http.Request) {
+func Index(rw http.ResponseWriter, _ *http.Request) {
 	// Parseamos el archivo de plantilla HTML
 	template, err := template.ParseFiles("template/index.html")
 
@@ -39,6 +39,8 @@ func Index(rw http.ResponseWriter, r *http.Request) {
 func main() {
 	// Asociamos la ruta principal ("/") con el handler Index
 	http.HandleFunc("/", Index)
+	fs := http.FileServer(http.Dir("./static"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	// Creamos y configuramos el servidor HTTP en el puerto 3000
 	fmt.Println("El servidor está corriendo en el puerto 3000")
